@@ -1,0 +1,20 @@
+package KieRule;
+import com.example.demo.entity.Order;
+
+
+rule "UBI"
+
+when 
+orderObject : Order(cardType=="UBI" && price>1000);
+then 
+orderObject.setDiscount(5);
+end;
+
+rule "HDFC"
+
+when 
+orderObject : Order(cardType=="HDFC" && price>1999);
+then 
+orderObject.setDiscount(8);
+end;
+
